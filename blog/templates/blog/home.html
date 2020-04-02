@@ -2,9 +2,15 @@
 {% block content %}
 <h1>This is a home page</h1>
 {% for i in posts %}
-<h1>
-    {{i.title}}
-    </h1>
-    <p>{{i.content}} posted on {{i.date}} by {{i.author}}</p>
+<article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="#">{{ i.author }}</a>
+        <small class="text-muted">{{ i.date_posted }}</small>
+      </div>
+      <h2><a class="article-title" href="#">{{ i.title }}</a></h2>
+      <p class="article-content">{{ i.content }}</p>
+    </div>
+  </article>
 {% endfor %}
 {% endblock content %}
